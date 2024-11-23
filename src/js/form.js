@@ -1,7 +1,7 @@
-const STORAGE_KEY = "feedback-form-state";
+const STORAGE_KEY = 'feedback-form-state';
 let formData = {
-    email: "",
-    message: ""
+  email: '',
+  message: '',
 };
 
 const feedbackForm = document.querySelector('.feedback-form');
@@ -12,32 +12,36 @@ feedbackForm.addEventListener('input', onFeedbackForm);
 popupText();
 feedbackForm.addEventListener('submit', checkSubmit);
 
-function onFeedbackForm(){
-    const emailValue = inputEmail.value;
-    const textareaValue = inputMessage.value;
-    formData.email = emailValue;
-    formData.message = textareaValue;
+function onFeedbackForm() {
+  const emailValue = inputEmail.value;
+  const textareaValue = inputMessage.value;
+  formData.email = emailValue;
+  formData.message = textareaValue;
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
-function popupText(){
-    const infoGet = localStorage.getItem(STORAGE_KEY);
-    const info = JSON.parse(infoGet);
-    
-    if (info){
-        inputEmail.value = info.email;
-        inputMessage.value = info.message;
-    }
+function popupText() {
+  const infoGet = localStorage.getItem(STORAGE_KEY);
+  const info = JSON.parse(infoGet);
+
+  if (info) {
+    inputEmail.value = info.email;
+    inputMessage.value = info.message;
+  }
 }
 
-function checkSubmit (event){
-    event.preventDefault();
-  
-    if (!inputEmail.value || !inputMessage.value) {
-        alert('All form fields must be filled in');
-      } else {
-        console.log({ email: inputEmail.value, message: inputMessage.value });;
-    }
+function checkSubmit(event) {
+  event.preventDefault();
+
+  if (!inputEmail.value || !inputMessage.value) {
+    alert('All form fields must be filled in');
+  } else {
+    console.log({ email: inputEmail.value, message: inputMessage.value });
   }
 
+  inputEmail.value = '';
+  inputMessage.value = '';
+
+  localStorage.removeItem(STORAGE_KEY);
+}

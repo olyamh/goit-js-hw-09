@@ -83,15 +83,18 @@ function createMarkup(arr) {
       width="360"
     />
   </a>
-</li>
+  </li>
 `).join('');
-
 };
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-new SimpleLightbox('.gallery-list a', {
+const lightbox = new SimpleLightbox('.gallery-list a', {
     captionDelay: 250,
+    captions: true,
+    captionsData: "alt",
 });
+
+lightbox.refresh();
 
