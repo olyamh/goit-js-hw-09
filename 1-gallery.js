@@ -10,4 +10,4 @@ import"./assets/styles-CSrBTRmV.js";import{S as e}from"./assets/vendor-CgTBfC_f.
   </a>
   </li>
 `).join("")}const r=new e(".gallery-list a",{captionDelay:250,captions:!0,captionsData:"alt"});r.refresh();
-//# sourceMappingURL=page-2.js.map
+//# sourceMappingURL=1-gallery.js.map
