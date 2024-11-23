@@ -1,0 +1,14 @@
+.feedback-form {
+    max-width: 408px;
+    min-height: 256px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    border-radius: 8px;
+    padding: 24px;
+    width: 408px;
+    height: 256px;
+    background-color:  #fff;
+    display: block;
+}
+

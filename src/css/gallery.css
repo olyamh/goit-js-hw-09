@@ -1,0 +1,15 @@
+.gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1128px;
+    gap: 48px 24px;
+    margin: 0 auto;
+}
+
+.gallery-image{
+    display: block;
+}
+
+.gallery-item{
+    max-width: calc((100% - 24px * 2) / 3);
+}
